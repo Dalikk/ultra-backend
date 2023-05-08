@@ -14,6 +14,9 @@ app.use(express.json());
 app.use(morgan('combined'));
 
 app.get('/product/rests', KonturController.products.getProductRests);
+// prettier-ignore
+app.get('/product/rests/filter', KonturController.products.getFilteredProductRests);
+app.get('/product/list', KonturController.products.getAllProducts);
 
 app.listen(port, () => {
   try {
