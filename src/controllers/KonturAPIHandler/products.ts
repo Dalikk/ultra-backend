@@ -6,7 +6,7 @@ import { IProductRestsFilterParams } from '@/interfaces/konturAPI';
 
 export const getAllProducts = async (req: Request, res: Response) => {
   try {
-    const products = await API.products.productList();
+    const products = await API.kontur.products.productList();
     return res.json(products);
   } catch (err) {
     console.log(err);
@@ -16,7 +16,7 @@ export const getAllProducts = async (req: Request, res: Response) => {
 
 export const getProductRests = async (req: Request, res: Response) => {
   try {
-    const productsRests = await API.products.productRests();
+    const productsRests = await API.kontur.products.productRests();
     return res.json(productsRests);
   } catch (err) {
     console.log(err);
@@ -32,7 +32,9 @@ export const getFilteredProductRests = async (
     const filterParams: IProductRestsFilterParams = {
       name: req.query.name.toString(),
     };
-    const productRests = await API.products.filteredProductRests(filterParams);
+    const productRests = await API.kontur.products.filteredProductRests(
+      filterParams,
+    );
     return res.json(productRests);
   } catch (err) {
     console.log(err);

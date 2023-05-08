@@ -1,1 +1,1 @@
-export * as products from './konturAPIHandler/products';
+export * as kontur from './konturAPIHandler';
