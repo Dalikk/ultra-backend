@@ -1,17 +1,17 @@
-import axios from '../../core/axios';
+import { konturHandlerAPI as konturHandler } from '../../core/axios';
 import { IProductRestsFilterParams } from '@/interfaces/konturAPI';
 
 export const productList = async () => {
-  return (await axios.get('/product/list')).data;
+  return (await konturHandler.get('/product/list')).data;
 };
 
 export const productRests = async () => {
-  return (await axios.get('/product/rests')).data;
+  return (await konturHandler.get('/product/rests')).data;
 };
 
 export const filteredProductRests = async (
   filterParams: IProductRestsFilterParams,
 ) => {
   const params = filterParams;
-  return (await axios.get('/product/rests/filtered', { params })).data;
+  return (await konturHandler.get('/product/rests/filtered', { params })).data;
 };
