@@ -9,6 +9,7 @@ export const getAllProducts = async (req: Request, res: Response) => {
     const products = await API.kontur.products.productList();
     return res.json(products);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
     res.status(500).json({ msg: 'Something went wrong' });
   }
@@ -19,6 +20,7 @@ export const getProductRests = async (req: Request, res: Response) => {
     const productsRests = await API.kontur.products.productRests();
     return res.json(productsRests);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
     res.status(500).json({ msg: 'Something went wrong' });
   }
@@ -37,6 +39,7 @@ export const getFilteredProductRests = async (
     );
     return res.json(productRests);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
     res.status(500).json({ msg: 'Something went wrong' });
   }

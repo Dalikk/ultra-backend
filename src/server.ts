@@ -23,7 +23,9 @@ app.listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`Express app started at http://localhost:${port}`);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log('SERVER ERROR');
+    // eslint-disable-next-line no-console
     console.log(err);
   }
 });
