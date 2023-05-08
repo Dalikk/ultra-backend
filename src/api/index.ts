@@ -1,1 +1,1 @@
-export * from './apiCategoryOne';
+export * as products from './konturAPIHandler/products';
